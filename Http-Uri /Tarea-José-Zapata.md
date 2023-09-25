@@ -14,7 +14,8 @@ estilos, colores y diseño. En cambio, curl muestra el contenido en su formato b
 Otra diferencia clave es la falta de interactividad en la salida de curl. En un navegador web normal se puede interactuar
 con la página haciendo clic en enlaces, etc. Mientras en curl simplemente recupera el contenido de la página web y lo
 muestra tal cual en la terminal. No se puede interactuar directamente con la página utilizando curl. 
-![image](https://github.com/Josezapat/CC3S2/assets/90808325/25cb7701-d351-4a4b-9424-e45b2aeb566b)
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/0dedeccc-e898-4127-a251-e1f56d0fe764)
 
  
 
@@ -38,7 +39,8 @@ en ninguna parte de esa línea?***
 La solicitud HTTP enviada por curl a mi servidor falso contiene solo la parte de la URI, pero no incluye la información
 completa de la URL, como "http://localhost:8081". Esto se debe a cómo se estructuran las solicitudes HTTP. 
 
- 
+ ![image](https://github.com/Josezapat/CC3S2/assets/90808325/56b92581-ef34-4c7a-9317-9bd32776394e)
+
 
  
 
@@ -129,11 +131,13 @@ El cliente no puede hacer nada más que esperar a que el servidor se recupere.
 ***¿Qué es un cuerpo de Request?***
 
 file:///C:/Users/Usuario/OneDrive/Escritorio/8AVO%20CICLO%20UNI/pagina.html 
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/d07a4f0b-03dc-494a-bd87-0e539691116a)
 
  
 
 Luego de darle a Log In! Recibo una solicitud en mi terminal: 
- 
+ ![image](https://github.com/Josezapat/CC3S2/assets/90808325/b358c43b-94d0-40a3-bb8f-3c8c2dcc0ac5)
+
 
 ***Pregunta:¿Cómo se presenta al servidor la información que ingresó en el formulario? ¿Qué tareas necesitaría realizar un
 framework SaaS como Sinatra o Rails para presentar esta información en un formato conveniente a una aplicación SaaS escrita,
@@ -190,6 +194,7 @@ servidor web y de la aplicación.
  
 
 HTTP sin estados y cookies 
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/f3aca991-8947-4b0d-8437-21b184f5a0aa)
 
  
 
