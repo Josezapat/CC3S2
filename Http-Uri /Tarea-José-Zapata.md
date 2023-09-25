@@ -1,6 +1,6 @@
 Tarea Introducción a HTTP y URI 
 
-Zapata Ancco José Daniel / 20202230A 
+Zapata Ancco José Daniel / 20202230A (Las capturas de pantallas del terminal y la página web están anexadas en la carpeta "Capturas")
 
 ***Pregunta:¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? 
 ¿Qué explica estas diferencias?***
