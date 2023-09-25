@@ -14,6 +14,7 @@ estilos, colores y diseño. En cambio, curl muestra el contenido en su formato b
 Otra diferencia clave es la falta de interactividad en la salida de curl. En un navegador web normal se puede interactuar
 con la página haciendo clic en enlaces, etc. Mientras en curl simplemente recupera el contenido de la página web y lo
 muestra tal cual en la terminal. No se puede interactuar directamente con la página utilizando curl. 
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/25cb7701-d351-4a4b-9424-e45b2aeb566b)
 
  
 
