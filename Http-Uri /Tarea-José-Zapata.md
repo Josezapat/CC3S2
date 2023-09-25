@@ -1,6 +1,6 @@
 Tarea Introducción a HTTP y URI 
 
-Zapata Ancco José Daniel / 20202230A (Lo hice sólo) 
+Zapata Ancco José Daniel / 20202230A 
 
 Pregunta:¿Cuáles son las dos diferencias principales que has visto anteriormente y lo que ves en un navegador web 'normal'? 
 ¿Qué explica estas diferencias? 
