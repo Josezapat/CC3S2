@@ -1,6 +1,6 @@
 Zapata Ancco José Daniel / 20202230A
 
-Define un método sum(array) que tome un arreglo de números enteros como argumento y devuelva la suma de sus elementos. Para una matriz vacía, debería devolver cero. Ejecuta las pruebas asociadas a través de:
+1. Define un método sum(array) que tome un arreglo de números enteros como argumento y devuelva la suma de sus elementos. Para una matriz vacía, debería devolver cero. Ejecuta las pruebas asociadas a través de:
 
 $rspec -e '#sum ' spec/parte1_spec.rb`
 
@@ -12,3 +12,8 @@ Defino el método sum(array) para que tome números enteros como argumento y me 
 
 Al escribir $rspec -e '#sum ' spec/parte1_spec.rb` en la terminal en Gitbash se ejecutó correctamente
 
+2. Define un método max_2_sum(array) que tome un arreglo de números enteros como argumento y devuelva la suma de sus dos elementos más grandes. Para un arreglo vacío, debería devolver cero. Para un arreglo con solo un elemento, debería devolver ese elemento (considera si los dos elementos más grandes también tienen el mismo valor). Ejecuta las pruebas asociadas a través de:
+
+$rspec -e '#max_2_sum' spec/parte1_spec.rb
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/92b86a48-b6cb-4307-87ae-815de14a3415)
