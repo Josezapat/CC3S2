@@ -44,7 +44,63 @@ Me ejecuta correctamente en el Gitbash
 
 $rspec -e '#hello' spec/parte2_spec.rb 
 
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/9732a5cd-fc91-47af-94c4-4979af8eb9f0)
+
+Defino el mensaje 'hello'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/04833eb0-fca9-42ab-8e7e-cd02ca6669a4)
+
+Me ejecuta correctamente en el Gitbash
+
+2. Define un método start_with_consonant?(s) que tome una cadena y devuelva verdadero si comienza con una consonante y falso en caso contrario. Asegúrate de que funcione tanto para mayúsculas como para minúsculas y para otras letras. Ejecuta las pruebas asociadas a través de:
+
+$rspec -e '#starts_with_consonant?' spec/parte2_spec.rb
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/77124220-cd82-4c0e-86a2-d7b6f4af3722)
+
+Defino el método start_with_consonant?
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/23b57068-ad4d-468a-8c69-989e8bedf7bd)
+
+Se ejecuta correctamente en el Gitbash
+
+3. Define un método binary_multiple_de_4?(s) que tome una cadena y devuelva verdadero si la cadena representa un número binario que es múltiplo de 4, como '1000'. Asegúrate de que devuelva falso si la cadena no es un número binario válido. Ejecuta las pruebas asociadas a través de:
+
+ $rspec -e '#binary_multiple_of_4?' spec/parte2_spec.rb
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/c2bddf75-bfe3-4fcf-9842-9567cd699131)
+ 
+Defino un método binary_multiple_de_4?
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/8bcf3af8-bc0d-4105-be7f-622aa71575b6)
+
+Se ejecuta correctamente en el Gitbash
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/cd89d844-2df9-45c3-ab39-25c2e50644be)
+
+Al Ejectuar $rspec spec/parte2_spec.rb
+
+**Parte 3: Conceptos básicos de orientación a objetos**
+Define una clase BookInStock que representa un libro con un número ISBN, isbn y el precio del libro como número de punto flotante, precio, como atributos.
+
+Ejecuta las pruebas asociadas a través de:
 
 
+$rspec -e 'getters and setters' spec/parte3_spec.rb 
+     
+El constructor debe aceptar el número ISBN (una cadena, ya que en la vida real los números ISBN pueden comenzar con cero e incluir guiones) como primer argumento y el precio como segundo argumento y debe generar ArgumentError (una de los tipos de excepciones integradas de Ruby) si el número ISBN es la cadena vacía o si el precio es menor o igual a cero. Incluye los getters y setters adecuados para estos atributos. Ejecuta las pruebas asociadas a través de:
 
 
+$rspec -e 'constructor' spec/part3_spec.rb
+     
+Incluye un método price_as_string que devuelva el precio del libro formateado con un signo de dólar inicial y dos decimales, es decir, un precio de 20 debe tener el formato $20.00 y un precio de 33.8 debe tener el formato $33.80. Consulta los métodos de cadenas formateadas en Ruby.
+
+Ejecuta las pruebas asociadas a través de:
+
+
+$rspec -e '#price_as_string' spec/parte3_spec.rb
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/4a9a7855-c0c1-41df-bf47-3b096a16c09f)
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/9cd5a560-18e8-4bf7-a300-9c6b6314380e)
+
+Se ejecuta correctamente en el Gitbash
