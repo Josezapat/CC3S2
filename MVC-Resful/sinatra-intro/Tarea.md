@@ -12,7 +12,8 @@ Sinatra nos ejecuta perfectamente en Gitbash
 Luego ingresando al siguiente enlace en nuestro buscador web nos imprime el resultado de nuestro archivo template.rb
   http://localhost:4567/todos
   
-  ![image](https://github.com/Josezapat/CC3S2/assets/90808325/cec4e9d1-406f-43f7-982a-1410e75f549a)
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/4b117da2-7c86-41d6-8fbb-e5d2d5bdd299)
+
 
 Además, prueba el siguiente comando usando 'curl' para verificar que la aplicación se esté ejecutando localmente y responda. El comando activa una solicitud GET para recuperar la lista de "cosas por hacer" y debería recibir una respuesta que se muestra en la salida estándar de la línea de comando.
 
