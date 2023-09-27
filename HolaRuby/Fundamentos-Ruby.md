@@ -104,3 +104,11 @@ $rspec -e '#price_as_string' spec/parte3_spec.rb
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/9cd5a560-18e8-4bf7-a300-9c6b6314380e)
 
 Se ejecuta correctamente en el Gitbash
+
+
+**Algo de TDD**
+Lo intenté con autotest:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/51077fef-d7c0-4fee-a4cb-2c5240f93bc5)
+
+Pero no conseguí resultados.
