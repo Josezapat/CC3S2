@@ -197,6 +197,43 @@ Luego ejecuta la actualización del paquete y verifica que tu salida contenga " 
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/f8960bbe-7a8f-449e-b927-39543f95a422)
 
+Luego ejecuto el comando "Rails server" para verificar que mi aplicacion funcione correctamente:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/ee3ab046-473a-4864-a43b-bfe8bb58cfd5)
+
+Efectivamente, vamos a http://127.0.0.1:3000 y nos sale esta pantalla:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/283fefe2-8916-45b4-90f9-f93982c0f533)
 
 
+1. Crea una migración que describa qué cambios realizar. Al igual que con Rails New, Rails proporciona un generador de migración que te brinda el código repetitivo, además de varios métodos helpers para describir la migración.
+
+2. Aplicar la migración a la base de datos de desarrollo. Rails define una tarea de rake para esto. rake es un ejecutor de tareas popular para Rails y contiene muchas tareas predefinidas, incluida la aplicación de una migración. Si estás interesado en obtener más información, prueba rake --tasks y rake --help.
+
+3. Suponiendo que la migración se realizó correctamente, actualiza el esquema de la base de datos de prueba ejecutando rake db:test:prepare.
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/2960e96b-dc1b-4ce1-abec-0e0c059234b6)
+
+De igual manera ahora creamos "20231011154020_create_movies"
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/26a22b39-ab4c-4821-94e6-8af67d412a63)
+
+Agregamos todos los cambios:
+
+```ruby
+class CreateMovies < ActiveRecord::Migration[7.1]
+  def change
+    create_table 'movies' do |t|
+      t.string 'title'
+      t.string 'rating'
+      t.text 'description'
+      t.datetime 'release_date'
+
+      t.timestamps
+    end
+  end
+end
+```
+Ahora ejecutamos la migración:
+![Uploading image.png…]()
 
