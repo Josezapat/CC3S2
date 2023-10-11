@@ -22,6 +22,55 @@ puts "La letra que falta es: #{letra_faltante}"
 Podemos escribir cualquier cadena dentro de "cadena" y letra faltante será la primera letra que falte del albfabeto dentro de la "cadena".
 
 **1.2**
+```ruby
+class BinaryTree
+  include Enumerable
+
+  attr_accessor :value, :left, :right
+
+  def initialize(value)
+    @value = value
+    @left = nil
+    @right = nil
+  end
+
+  def <<(element)
+    if element <= value
+      if left.nil?
+        @left = BinaryTree.new(element)
+      else
+        left << element
+      end
+    else
+      if right.nil?
+        @right = BinaryTree.new(element)
+      else
+        right << element
+      end
+    end
+  end
+
+  def empty?
+    left.nil? && right.nil?
+  end
+
+  def each(&block)
+    left.each(&block) if left
+    yield(value)
+    right.each(&block) if right
+  end
+end
+
+# Ejemplo de uso
+tree = BinaryTree.new(10)
+[5, 15, 2, 7, 12, 17].each { |element| tree << element }
+
+puts "Elementos del árbol en orden:"
+tree.each { |element| puts element }
+
+puts "¿El árbol está vacío? #{tree.empty?}"
+
+```
 
 
 
