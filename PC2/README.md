@@ -165,8 +165,94 @@ end
 
 Estas preguntas son de las clases de Rails dadas en el curso.
 
-1. En vez de redirigir a la acción Index tras un create exitoso, redirija a la acción show de la película recién creada. Pista: Puedes usar el método helper para URI movie_path, pero necesitarás darle un argumento para identificar la película. Para obtener este argumento, recuerda que si Movie.create se completa correctamente, devuelve el objeto recién creado, además de crearlo.
-2. 
+**2.1 En vez de redirigir a la acción Index tras un create exitoso, redirija a la acción show de la película recién creada. Pista: Puedes usar el método helper para URI movie_path, pero necesitarás darle un argumento para identificar la película. Para obtener este argumento, recuerda que si Movie.create se completa correctamente, devuelve el objeto recién creado, además de crearlo.**
+
+```ruby
+class MoviesController < ApplicationController
+  def index
+    @movies = Movie.all
+  end
+
+  def new
+    # default: render 'new' template
+  end
+
+  def show
+    id = params[:id] # retrieve movie ID from URI route
+    @movie = Movie.find(id) # look up movie by unique ID
+    # will render app/views/movies/show.html.haml by default
+  end
+
+  def create
+    @movie = Movie.new(movie_params) # Supongamos que usas strong parameters para permitir los atributos necesarios
+    if @movie.save
+      # Creación exitosa
+      redirect_to movie_path(@movie)
+    else
+      # Handle errores de validación u otros casos
+      render 'new'
+    end
+  end
+
+  # Otros métodos del controlador (update, edit, destroy, etc.) van aquí
+
+  private
+
+  # Define el método para permitir los atributos necesarios usando strong parameters
+  def movie_params
+    params.require(:movie).permit(:title, :description, :year, :director, :genre)
+  end
+end
+
+```
+
+**2.2 Se redirigirá al usuario a la vista de la película recién creada en la acción show. Asegúrate de que la vista show (show.html.haml o cualquier otro formato que estés utilizando) esté correctamente configurada para mostrar los detalles de la película.**
+
+Se abrirá el archibo _form.html.erb y lo modificaremos de esta manera:
+```html
+<%= form_with(model: movie, local: true) do |form| %>
+  # Otros campos existentes
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description, rows: 4 %>  <!-- Cambiar a text_area para permitir la edición de descripción -->
+  </div>
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+```
+Luego actualizamos el controlador MoviesController
+
+```ruby
+private
+
+def movie_params
+  params.require(:movie).permit(:title, :description, :year, :director, :genre)
+end
+
+```
+Con estos cambios el campo description se mostrará y permitirá la edición en las vistas New y Edit de películas.
+
+**2.3Los métodos actuales del controlador no son muy robustos: si el usuario introduce de manera manual un URI para ver (Show) una película que no existe (por ejemplo /movies/99999), verá un mensaje de excepción horrible. Modifique el método show del controlador para que, si se pide una película que no existe, el usuario sea redirigido a la vista Index con un mensaje más amigable explicando que no existe ninguna película con ese ID. (Pista: Usa begin. . . rescue. . . end para recuperar el control en la excepción ActiveRecord::RecordNotFound**
+
+
+Para que un usuario intente acceder a una película que no existe y proporcionar un mensaje amigable, podemos modificar el método show del controlador MoviesController para que maneje la excepción ActiveRecord::RecordNotFound
+
+```ruby
+def show
+  begin
+    id = params[:id] # Recupera el ID de la película desde la URI
+    @movie = Movie.find(id) # Intenta encontrar la película por ID
+  rescue ActiveRecord::RecordNotFound
+    # Manejo de la excepción si la película no existe
+    flash[:alert] = "No se ha encontrado ninguna película con el ID proporcionado."
+    redirect_to movies_path
+  end
+end
+```
+
+Con esta modificación, cuando un usuario intente acceder a una película que no existe, será redirigido a la vista Index con un mensaje de alerta claro.
 ***
 
 **Parte 3 Rail**
