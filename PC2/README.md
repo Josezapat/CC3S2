@@ -23,7 +23,7 @@ Podemos escribir cualquier cadena dentro de "cadena" y letra faltante será la p
 
 **1.2**
 ```ruby
-class BinaryTree
+class ArbolBinario
   include Enumerable
 
   attr_accessor :value, :left, :right
@@ -34,24 +34,24 @@ class BinaryTree
     @right = nil
   end
 
-  def <<(element)
-    if element <= value
+  def <<(elemento)
+    if elemento <= value
       if left.nil?
-        @left = BinaryTree.new(element)
+        @left = ArbolBinario.new(elemento)
       else
-        left << element
+        left << elemento
       end
     else
       if right.nil?
-        @right = BinaryTree.new(element)
+        @right = ArbolBinario.new(elemento)
       else
-        right << element
+        right << elemento
       end
     end
   end
 
   def empty?
-    left.nil? && right.nil?
+    value.nil? && left.nil? && right.nil?
   end
 
   def each(&block)
@@ -62,13 +62,13 @@ class BinaryTree
 end
 
 # Ejemplo de uso
-tree = BinaryTree.new(10)
-[5, 15, 2, 7, 12, 17].each { |element| tree << element }
+Arbol = ArbolBinario.new(10)
+[5, 15, 2, 7, 12, 17].each { |elemento| Arbol << elemento }
 
 puts "Elementos del árbol en orden:"
-tree.each { |element| puts element }
+Arbol.each { |elemento| puts elemento }
 
-puts "¿El árbol está vacío? #{tree.empty?}"
+puts "¿El árbol está vacío? #{Arbol.empty?}"
 
 ```
 
