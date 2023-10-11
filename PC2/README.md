@@ -72,5 +72,90 @@ puts "¿El árbol está vacío? #{Arbol.empty?}"
 
 ```
 
+- Se incluye el módulo Enumerable para habilitar la iteración sobre instancias de la clase.
+- La clase tiene tres atributos: value (valor del nodo actual), left (subárbol izquierdo), y right (subárbol derecho).
+- El constructor initialize crea un nuevo nodo del árbol binario con un valor dado y establece los subárboles izquierdo y derecho como nulos.
+- El método empty? verifica si el árbol está vacío, es decir, si el nodo actual y ambos subárboles son nulos.
+- El método each se utiliza para recorrer los elementos del árbol en orden.
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/8fe36ee7-bd20-4855-a31d-c222addbe395)
+
+Los elementos del árbol se imprimen en orden ascendente (2, 5, 7, 10, 12, 15, 17) debido a que es un árbol binario de búsqueda. Además, se confirma que el árbol no está vacío (valor "false") ya que se agregaron elementos a él.
+
+**1.3**
+
+```ruby
+class ArbolBinario
+  include Enumerable
+
+  attr_accessor :value, :left, :right
+
+  def initialize(value)
+    @value = value
+    @left = nil
+    @right = nil
+  end
+
+  def <<(elemento)
+    if elemento <= value
+      if left.nil?
+        @left = ArbolBinario.new(elemento)
+      else
+        left << elemento
+      end
+    else
+      if right.nil?
+        @right = ArbolBinario.new(elemento)
+      else
+        right << elemento
+      end
+    end
+  end
+
+  def empty?
+    value.nil? && left.nil? && right.nil?
+  end
+
+  def each(&block)
+    left.each(&block) if left
+    yield(value)
+    right.each(&block) if right
+  end
+
+  def include?(elt, &block)
+    return true if value == elt
+    left.include?(elt, &block) if left && (block.nil? || block.call(value, elt) == 0)
+    right.include?(elt, &block) if right && (block.nil? || block.call(value, elt) == 0)
+    false
+  end
+
+  def all?(&block)
+    return false unless block.call(value)
+    left.all?(&block) if left
+    right.all?(&block) if right
+    true
+  end
+
+  def any?(&block)
+    return true if block.call(value)
+    left.any?(&block) if left
+    right.any?(&block) if right
+    false
+  end
+
+  def sort
+    sorted = []
+    sorted += left.sort if left
+    sorted << value
+    sorted += right.sort if right
+    sorted
+  end
+end
+```
+- La clase ArbolBinario tiene los métodos include?, all?, any?, y sort
+- Se agregaron métodos adicionales para buscar elementos, verificar condiciones y ordenar elementos. El árbol organiza los elementos de manera que los menores están a la izquierda y los mayores a la derecha.
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/b61d9602-74c9-48d8-98ca-5e2851fc1287)
+
 
 
