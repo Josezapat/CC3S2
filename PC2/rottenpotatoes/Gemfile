@@ -1,0 +1,62 @@
+source "https://rubygems.org"
+
+# Ruby version
+ruby "3.2.2"
+
+# Rails version
+gem "rails", "~> 7.1.0"
+
+# Use SQLite as the development and test database
+gem "sqlite3", "~> 1.4"
+
+# Use the Puma web server
+gem "puma", ">= 5.0"
+
+# Use JavaScript with ESM import maps
+gem "importmap-rails"
+
+# Turbo for Hotwire's SPA-like page accelerator
+gem "turbo-rails"
+
+# Stimulus for Hotwire's modest JavaScript framework
+gem "stimulus-rails"
+
+# Jbuilder for JSON APIs
+gem "jbuilder"
+
+# Use PostgreSQL as the production database for Heroku
+gem "pg", "~> 1.2"
+
+# Use the 12factor gem for configuring Rails apps on Heroku
+gem 'rails_12factor'
+
+# Windows does not include zoneinfo files, so bundle the tzinfo-data gem
+gem "tzinfo-data", platforms: %i[windows jruby]
+
+# Reduces boot times through caching; required in config/boot.rb
+gem "bootsnap", require: false
+
+# Development and test group
+group :development, :test do
+  gem "debug", platforms: %i[mri windows]
+end
+
+# Development group
+group :development do
+  gem "web-console"
+  # Uncomment the line below if you want to use rack-mini-profiler
+  # gem "rack-mini-profiler"
+  # Uncomment the line below if you want to use Spring
+  # gem "spring"
+end
+
+# Test group
+group :test do
+  gem "capybara"
+  gem "selenium-webdriver"
+end
+
+# Production group (Heroku)
+group :production do
+  # You can include additional production-specific gems here if needed
+end
