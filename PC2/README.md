@@ -235,5 +235,40 @@ class CreateMovies < ActiveRecord::Migration[7.1]
 end
 ```
 Ahora ejecutamos la migración:
-![Uploading image.png…]()
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/9767bfff-591a-4514-af06-6bdaaa14dd35)
+***
+**Crea el modelo inicial e inicializa la base de datos**
+
+- Creamos el archivo movie.rb:
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/7b4eb10a-e052-420f-80e8-89c81b1668c2)
+
+- Abrimos el archivo y colocamos este código:
+```ruby
+class Movie < ActiveRecord::Base
+end
+```
+- En el archivo seeds.rb colocamos este código:
+```ruby
+# Seed the RottenPotatoes DB with some movies.
+
+more_movies = [
+  { title: 'Ganibal', rating: 'G', release_date: '25-Nov-1992' },
+  { title: 'Fuerza bruta', rating: 'R', release_date: '21-Jul-1989' },
+  { title: 'The Ring', rating: 'PG-13', release_date: '10-Aug-2011' },
+  { title: 'Alien: The Return', rating: 'PG', release_date: '12-Jun-1981' }
+]
+
+more_movies.each do |movie|
+  Movie.create!(movie)
+end
+```
+
+- Ejecutamos "rails db:seed"
+- Verificamos las peliculas que se han agregado con "rails console"
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/d631bbcb-7c9f-48ed-88bf-52a63af33276)
+
+Luego jugamos con la consola ingresando otros comandos:
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/d1078b80-6cb0-4dd5-b34e-68c24af9e427)
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/8e6debdd-1702-4b33-a274-a34af76aa585)
+
 
