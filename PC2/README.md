@@ -157,5 +157,9 @@ end
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/b61d9602-74c9-48d8-98ca-5e2851fc1287)
 
+- "sort" es un método que has definido en la clase ArbolBinario para ordenar los elementos contenidos en un árbol binario de búsqueda.
 
+***
+
+**Parte 2 Introducción a Rails**
 
