@@ -1,3 +1,4 @@
+José Daniel Zapata Ancco / 20202230A Práctica Calificada N°2
 **Parte 1 Algoritmos, Programación Orientada a Objetos**
 **1.1**
 ```ruby
