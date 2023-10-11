@@ -163,6 +163,10 @@ end
 
 **Parte 2 Introducción a Rails**
 
+Estas preguntas son de las clases de Rails dadas en el curso.
+
+1. En vez de redirigir a la acción Index tras un create exitoso, redirija a la acción show de la película recién creada. Pista: Puedes usar el método helper para URI movie_path, pero necesitarás darle un argumento para identificar la película. Para obtener este argumento, recuerda que si Movie.create se completa correctamente, devuelve el objeto recién creado, además de crearlo.
+2. 
 ***
 
 **Parte 3 Rail**
@@ -271,4 +275,42 @@ Luego jugamos con la consola ingresando otros comandos:
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/d1078b80-6cb0-4dd5-b34e-68c24af9e427)
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/8e6debdd-1702-4b33-a274-a34af76aa585)
 
+***
 
+**Parte 3: Crear rutas, acciones y vistas CRUD para películas**
+Intenta ejecutar la aplicación nuevamente (instrucciones en la parte 1) y esta vez, en lugar de visitar la página de inicio, intenta visitar /movies. (Es decir: /movies debe ser la ruta del URI, la parte que sigue inmediatamente al nombre de host y/o número de puerto en el URI).
+
+- Ejectuamos "rails server"
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/ffa7b073-1d18-4af8-806b-00aee0fd2da1)
+
+- Luego buscamos la URL http://127.0.0.1:3000/movies y nos aparece la lista de peliculas:
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/fe7ce4aa-3526-4501-a0d5-622f24c952e2)
+
+***
+**Crear rutas CRUD**
+
+- Editamos nuestro archivo routes.rb:
+```ruby
+Rails.application.routes.draw do
+  resources :movies
+
+  root to: redirect('/movies')
+end
+```
+
+- Con la implementación dada podemos agregar una nueva pelicula:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/ffcc2a91-8430-483c-8822-24bd9122e8fb)
+
+***
+**Cambiar la base de datos para producción.**
+- Implementamos nuestra aplcación a Heroku de la siguiente manera:
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/5176af4c-d231-4cd3-8058-3ca9771e4a62)
+....
+....
+....
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/5fd6b123-36dc-41f4-a6d8-d9bfba2b15fe)
+
+- heroku nos da la URL "https://git.heroku.com/rottenpotatoesjosezapata.git" que es donde funcionará nuestra aplicación de esta manera:
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/2db2009b-7747-4dfb-9166-6aaba2e9f8d5)
+- Obtenemos todas las peliculas puestas en seeds.rb
