@@ -1,0 +1,1335 @@
+Started GET "/" for 127.0.0.1 at 2023-10-11 10:27:02 -0500
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.8ms | Allocations: 375)
+Completed 200 OK in 137ms (Views: 31.9ms | ActiveRecord: 0.0ms | Allocations: 8786)
+
+
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (2.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-11 15:37:43.106604', '2023-10-11 15:37:43.106608') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePosts (20231011153713)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231011153713') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "posts"[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "posts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20231011153713)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2023-10-11 15:38:07.722793', '2023-10-11 15:38:07.722798') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.1ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2023-10-11 15:38:07.726302' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '95a0763ab5eaeb782ccb228d109693781a0f77a0', '2023-10-11 15:38:07.728261', '2023-10-11 15:38:07.728264') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20231011154020)
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateMovies (20231011154020)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "movies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "rating" varchar, "description" text, "release_date" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20231011154020') RETURNING "version"[0m
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.3ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ganibal"], ["rating", "G"], ["description", nil], ["release_date", "1992-11-25 00:00:00"], ["created_at", "2023-10-11 16:06:57.068052"], ["updated_at", "2023-10-11 16:06:57.068052"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.1ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fuerza bruta"], ["rating", "R"], ["description", nil], ["release_date", "1989-07-21 00:00:00"], ["created_at", "2023-10-11 16:06:57.077244"], ["updated_at", "2023-10-11 16:06:57.077244"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.5ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Ring"], ["rating", "PG-13"], ["description", nil], ["release_date", "2011-08-10 00:00:00"], ["created_at", "2023-10-11 16:06:57.080691"], ["updated_at", "2023-10-11 16:06:57.080691"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (1.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Alien: The Return"], ["rating", "PG"], ["description", nil], ["release_date", "1981-06-12 00:00:00"], ["created_at", "2023-10-11 16:06:57.085038"], ["updated_at", "2023-10-11 16:06:57.085038"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" ORDER BY "movies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Ganibal"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."rating" = ? /* loading for pp */ LIMIT ?[0m  [["rating", "PG-13"], ["LIMIT", 11]]
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:18:50 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 375)
+Completed 200 OK in 68ms (Views: 16.4ms | ActiveRecord: 0.0ms | Allocations: 4830)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:18:52 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 4ms (Views: 0.9ms | ActiveRecord: 0.0ms | Allocations: 219)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:18:56 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:19:00 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 5ms (Views: 1.0ms | ActiveRecord: 0.0ms | Allocations: 218)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:19:03 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 0.1ms | Allocations: 12)
+Completed 200 OK in 7ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 214)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:19:23 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movies"):
+  
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:21:10 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby32-x64/lib/ruby/gems/3.2.0/gems/railties-7.1.0/lib/rails/templates/rails/welcome/index.html.erb (Duration: 1.2ms | Allocations: 375)
+Completed 200 OK in 49ms (Views: 11.7ms | ActiveRecord: 0.0ms | Allocations: 4830)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:21:15 -0500
+  
+ActionController::RoutingError (uninitialized constant MoviesController):
+  
+Started GET "/movie" for 127.0.0.1 at 2023-10-11 11:21:21 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/movie"):
+  
+  [1m[36mActiveRecord::InternalMetadata Load (19.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (2.8ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Ganibal"], ["rating", "G"], ["description", nil], ["release_date", "1992-11-25 00:00:00"], ["created_at", "2023-10-11 16:26:49.209774"], ["updated_at", "2023-10-11 16:26:49.209774"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Fuerza bruta"], ["rating", "R"], ["description", nil], ["release_date", "1989-07-21 00:00:00"], ["created_at", "2023-10-11 16:26:49.217649"], ["updated_at", "2023-10-11 16:26:49.217649"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.7ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "The Ring"], ["rating", "PG-13"], ["description", nil], ["release_date", "2011-08-10 00:00:00"], ["created_at", "2023-10-11 16:26:49.220022"], ["updated_at", "2023-10-11 16:26:49.220022"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMovie Create (0.6ms)[0m  [1m[32mINSERT INTO "movies" ("title", "rating", "description", "release_date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "Alien: The Return"], ["rating", "PG"], ["description", nil], ["release_date", "1981-06-12 00:00:00"], ["created_at", "2023-10-11 16:26:49.222130"], ["updated_at", "2023-10-11 16:26:49.222130"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies" for ::1 at 2023-10-11 11:29:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 65ms (ActiveRecord: 0.0ms | Allocations: 8103)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 11:30:11 -0500
+Processing by MoviesController#index as HTML
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.0ms | Allocations: 559)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#index is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 11:32:37 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 63.4ms | Allocations: 12726)
+  Rendered layout layouts/application.html.erb (Duration: 1514.4ms | Allocations: 101011)
+Completed 500 Internal Server Error in 1533ms (ActiveRecord: 5.1ms | Allocations: 102441)
+
+
+  
+ActionView::Template::Error (Permission denied @ rb_file_s_rename - (C:/Users/Jose/Desktop/rottenpotatoes/tmp/cache/assets/sprockets/v4.0.0/Jg/JgHIdw19QudFpHp22qnCsPF4QVgdoJdeKcj4rKVbFvc.cache.30580.18440.773377, C:/Users/Jose/Desktop/rottenpotatoes/tmp/cache/assets/sprockets/v4.0.0/Jg/JgHIdw19QudFpHp22qnCsPF4QVgdoJdeKcj4rKVbFvc.cache)):
+  
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `rename'
+sprockets (4.2.1) lib/sprockets/path_utils.rb:362:in `atomic_write'
+sprockets (4.2.1) lib/sprockets/cache/file_store.rb:112:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:227:in `set'
+sprockets (4.2.1) lib/sprockets/cache.rb:143:in `set'
+sprockets (4.2.1) lib/sprockets/loader.rb:265:in `store_asset'
+sprockets (4.2.1) lib/sprockets/loader.rb:228:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/context.rb:117:in `load'
+sprockets (4.2.1) lib/sprockets/context.rb:145:in `depend_on_asset'
+sprockets (4.2.1) lib/sprockets/context.rb:185:in `link_asset'
+sprockets-rails (3.4.2) lib/sprockets/rails/context.rb:27:in `compute_asset_path'
+actionview (7.1.0) lib/action_view/helpers/asset_url_helper.rb:204:in `asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:41:in `sourcemap_asset_path'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:34:in `resolved_sourcemap_comment'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:15:in `block in call'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `gsub'
+sprockets-rails (3.4.2) lib/sprockets/rails/sourcemapping_url_processor.rb:11:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/bundle.rb:27:in `call'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:84:in `call_processor'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:66:in `block in call_processors'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `reverse_each'
+sprockets (4.2.1) lib/sprockets/processor_utils.rb:65:in `call_processors'
+sprockets (4.2.1) lib/sprockets/loader.rb:184:in `load_from_unloaded'
+sprockets (4.2.1) lib/sprockets/loader.rb:59:in `block in load'
+sprockets (4.2.1) lib/sprockets/loader.rb:339:in `fetch_asset_from_dependency_cache'
+sprockets (4.2.1) lib/sprockets/loader.rb:43:in `load'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `block in load'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:207:in `block in fetch_or_store'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:187:in `fetch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/map.rb:206:in `fetch_or_store'
+sprockets (4.2.1) lib/sprockets/cached_environment.rb:44:in `load'
+sprockets (4.2.1) lib/sprockets/base.rb:81:in `find_asset'
+sprockets (4.2.1) lib/sprockets/base.rb:88:in `find_all_linked_assets'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `each'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `to_a'
+sprockets (4.2.1) lib/sprockets/manifest.rb:125:in `block (2 levels) in find'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:24:in `block in execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `block in synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/synchronization/mutex_lockable_object.rb:48:in `synchronize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/safe_task_executor.rb:22:in `execute'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/promise.rb:564:in `block in realize'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:352:in `run_task'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:343:in `block (3 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `loop'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:334:in `block (2 levels) in create_worker'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `catch'
+concurrent-ruby (1.2.2) lib/concurrent-ruby/concurrent/executor/ruby_thread_pool_executor.rb:333:in `block in create_worker'
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:33:29 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 65.9ms | Allocations: 12527)
+  Rendered layout layouts/application.html.erb (Duration: 421.9ms | Allocations: 54722)
+Completed 200 OK in 525ms (Views: 440.1ms | ActiveRecord: 1.4ms | Allocations: 65343)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:33:45 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 80.8ms | Allocations: 5781)
+Completed 200 OK in 86ms (Views: 81.9ms | ActiveRecord: 0.1ms | Allocations: 6064)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:33:49 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 14.0ms | Allocations: 2826)
+Completed 200 OK in 20ms (Views: 15.2ms | ActiveRecord: 0.1ms | Allocations: 3108)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:33:57 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 15.8ms | Allocations: 2806)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.1ms | Allocations: 3088)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Ganibal"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Fuerza bruta"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "The Ring"], ["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."title" = ? LIMIT ?[0m  [["title", "Alien: The Return"], ["LIMIT", 1]]
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:35:33 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 66.8ms | Allocations: 12533)
+  Rendered layout layouts/application.html.erb (Duration: 224.6ms | Allocations: 49481)
+Completed 200 OK in 325ms (Views: 246.8ms | ActiveRecord: 0.8ms | Allocations: 60102)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 11:35:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 15.1ms | Allocations: 2862)
+Completed 200 OK in 21ms (Views: 16.1ms | ActiveRecord: 0.2ms | Allocations: 3147)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 11:35:45 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.0ms | Allocations: 619)
+  Rendered layout layouts/application.html.erb (Duration: 13.1ms | Allocations: 2832)
+Completed 200 OK in 18ms (Views: 14.1ms | ActiveRecord: 0.1ms | Allocations: 3116)
+
+
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" /* loading for pp */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/movies" for ::1 at 2023-10-11 11:56:32 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 84.9ms | Allocations: 12527)
+  Rendered layout layouts/application.html.erb (Duration: 306.0ms | Allocations: 48206)
+Completed 200 OK in 410ms (Views: 323.0ms | ActiveRecord: 0.9ms | Allocations: 58827)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:21:11 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 62.5ms | Allocations: 12708)
+  Rendered layout layouts/application.html.erb (Duration: 245.1ms | Allocations: 49663)
+Completed 200 OK in 365ms (Views: 264.1ms | ActiveRecord: 0.8ms | Allocations: 60285)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:21:15 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.6ms | Allocations: 651)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 2873)
+Completed 200 OK in 21ms (Views: 16.0ms | ActiveRecord: 0.1ms | Allocations: 3158)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:21:16 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 21.7ms | Allocations: 2882)
+Completed 200 OK in 28ms (Views: 23.1ms | ActiveRecord: 0.1ms | Allocations: 3166)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-10-11 12:21:18 -0500
+Processing by MoviesController#new as HTML
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.0ms | Allocations: 849)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#new is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:21:21 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 644)
+  Rendered layout layouts/application.html.erb (Duration: 14.8ms | Allocations: 2863)
+Completed 200 OK in 19ms (Views: 15.6ms | ActiveRecord: 0.2ms | Allocations: 3140)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 12:55:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Redirected to http://127.0.0.1:3000/movies
+Completed 301 Moved Permanently in 8ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:55:01 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 61.0ms | Allocations: 12677)
+  Rendered layout layouts/application.html.erb (Duration: 235.7ms | Allocations: 49732)
+Completed 200 OK in 349ms (Views: 256.8ms | ActiveRecord: 0.6ms | Allocations: 60331)
+
+
+Started GET "/movies/movies" for 127.0.0.1 at 2023-10-11 12:55:07 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"movies"}
+  [1m[36mMovie Load (0.8ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:43:in `set_movie'
+Completed 404 Not Found in 31ms (ActiveRecord: 0.8ms | Allocations: 2643)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Movie with 'id'=movies):
+  
+app/controllers/movies_controller.rb:43:in `set_movie'
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:55:14 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (1.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:6
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 650)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 2870)
+Completed 200 OK in 24ms (Views: 18.2ms | ActiveRecord: 1.3ms | Allocations: 3152)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:57:01 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:12
+  Rendered movies/index.html.erb within layouts/application (Duration: 59.5ms | Allocations: 12698)
+  Rendered layout layouts/application.html.erb (Duration: 226.5ms | Allocations: 49871)
+Completed 200 OK in 316ms (Views: 244.3ms | ActiveRecord: 0.9ms | Allocations: 60492)
+
+
+Started GET "/movies/new" for 127.0.0.1 at 2023-10-11 12:57:08 -0500
+Processing by MoviesController#new as HTML
+Completed 406 Not Acceptable in 14ms (ActiveRecord: 0.0ms | Allocations: 851)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#new is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:57:11 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.6ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:12
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 652)
+  Rendered layout layouts/application.html.erb (Duration: 16.3ms | Allocations: 2877)
+Completed 200 OK in 22ms (Views: 17.0ms | ActiveRecord: 0.6ms | Allocations: 3162)
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 12:59:27 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 58.1ms | Allocations: 12988)
+  Rendered layout layouts/application.html.erb (Duration: 205.6ms | Allocations: 50102)
+Completed 200 OK in 295ms (Views: 222.8ms | ActiveRecord: 0.6ms | Allocations: 60724)
+
+
+Started GET "/movies/1" for 127.0.0.1 at 2023-10-11 12:59:52 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:43:in `set_movie'
+Completed 406 Not Acceptable in 173ms (ActiveRecord: 0.2ms | Allocations: 14756)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#show is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 13:00:03 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.1ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 15.5ms | Allocations: 3063)
+Completed 200 OK in 21ms (Views: 16.5ms | ActiveRecord: 0.2ms | Allocations: 3348)
+
+
+Started GET "/movies/8" for ::1 at 2023-10-11 13:00:30 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:43:in `set_movie'
+Completed 406 Not Acceptable in 6ms (ActiveRecord: 0.1ms | Allocations: 878)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#show is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 13:00:32 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 16.4ms | Allocations: 3076)
+Completed 200 OK in 22ms (Views: 17.2ms | ActiveRecord: 0.1ms | Allocations: 3352)
+
+
+Started GET "/movies" for ::1 at 2023-10-11 13:03:20 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 63.6ms | Allocations: 12988)
+  Rendered layout layouts/application.html.erb (Duration: 210.6ms | Allocations: 50070)
+Completed 200 OK in 318ms (Views: 227.8ms | ActiveRecord: 1.2ms | Allocations: 60691)
+
+
+Started GET "/movies/1" for ::1 at 2023-10-11 13:03:22 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:43:in `set_movie'
+Completed 406 Not Acceptable in 18ms (ActiveRecord: 0.2ms | Allocations: 2961)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#show is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 13:03:25 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 850)
+  Rendered layout layouts/application.html.erb (Duration: 17.7ms | Allocations: 3072)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 0.2ms | Allocations: 3357)
+
+
+Started GET "/movies/1" for ::1 at 2023-10-11 13:03:26 -0500
+Processing by MoviesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/movies_controller.rb:43:in `set_movie'
+Completed 406 Not Acceptable in 7ms (ActiveRecord: 0.1ms | Allocations: 890)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#show is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 13:03:28 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 849)
+  Rendered layout layouts/application.html.erb (Duration: 15.0ms | Allocations: 3072)
+Completed 200 OK in 21ms (Views: 16.7ms | ActiveRecord: 0.2ms | Allocations: 3356)
+
+
+Started GET "/movies/new" for ::1 at 2023-10-11 13:03:33 -0500
+Processing by MoviesController#new as HTML
+Completed 406 Not Acceptable in 12ms (ActiveRecord: 0.0ms | Allocations: 721)
+
+
+  
+ActionController::MissingExactTemplate (MoviesController#new is missing a template for request formats: text/html):
+  
+actionpack (7.1.0) lib/action_controller/metal/implicit_render.rb:47:in `default_render'
+actionpack (7.1.0) lib/action_controller/metal/basic_implicit_render.rb:7:in `send_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:224:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rendering.rb:165:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:259:in `block in process_action'
+activesupport (7.1.0) lib/active_support/callbacks.rb:121:in `block in run_callbacks'
+actiontext (7.1.0) lib/action_text/rendering.rb:23:in `with_renderer'
+actiontext (7.1.0) lib/action_text/engine.rb:69:in `block (4 levels) in <class:Engine>'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `instance_exec'
+activesupport (7.1.0) lib/active_support/callbacks.rb:130:in `block in run_callbacks'
+activesupport (7.1.0) lib/active_support/callbacks.rb:141:in `run_callbacks'
+actionpack (7.1.0) lib/abstract_controller/callbacks.rb:258:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/rescue.rb:25:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:74:in `block in process_action'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `block in instrument'
+activesupport (7.1.0) lib/active_support/notifications/instrumenter.rb:58:in `instrument'
+activesupport (7.1.0) lib/active_support/notifications.rb:206:in `instrument'
+actionpack (7.1.0) lib/action_controller/metal/instrumentation.rb:73:in `process_action'
+actionpack (7.1.0) lib/action_controller/metal/params_wrapper.rb:261:in `process_action'
+activerecord (7.1.0) lib/active_record/railties/controller_runtime.rb:32:in `process_action'
+actionpack (7.1.0) lib/abstract_controller/base.rb:160:in `process'
+actionview (7.1.0) lib/action_view/rendering.rb:40:in `process'
+actionpack (7.1.0) lib/action_controller/metal.rb:227:in `dispatch'
+actionpack (7.1.0) lib/action_controller/metal.rb:309:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:51:in `block in serve'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:131:in `block in find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `each'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:124:in `find_routes'
+actionpack (7.1.0) lib/action_dispatch/journey/router.rb:32:in `serve'
+actionpack (7.1.0) lib/action_dispatch/routing/route_set.rb:882:in `call'
+rack (3.0.8) lib/rack/tempfile_reaper.rb:20:in `call'
+rack (3.0.8) lib/rack/etag.rb:29:in `call'
+rack (3.0.8) lib/rack/conditional_get.rb:31:in `call'
+rack (3.0.8) lib/rack/head.rb:15:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/permissions_policy.rb:36:in `call'
+actionpack (7.1.0) lib/action_dispatch/http/content_security_policy.rb:33:in `call'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:272:in `context'
+rack-session (2.0.0) lib/rack/session/abstract/id.rb:266:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/cookies.rb:689:in `call'
+activerecord (7.1.0) lib/active_record/migration.rb:653:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+activesupport (7.1.0) lib/active_support/callbacks.rb:101:in `run_callbacks'
+actionpack (7.1.0) lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/actionable_exceptions.rb:16:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/debug_exceptions.rb:29:in `call'
+web-console (4.2.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.2.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.2.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (7.1.0) lib/rails/rack/logger.rb:37:in `call_app'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `block in tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:39:in `tagged'
+activesupport (7.1.0) lib/active_support/tagged_logging.rb:135:in `tagged'
+activesupport (7.1.0) lib/active_support/broadcast_logger.rb:212:in `method_missing'
+railties (7.1.0) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.4.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/remote_ip.rb:92:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/request_id.rb:28:in `call'
+rack (3.0.8) lib/rack/method_override.rb:28:in `call'
+rack (3.0.8) lib/rack/runtime.rb:24:in `call'
+activesupport (7.1.0) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:59:in `block in call'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:24:in `collect_events'
+actionpack (7.1.0) lib/action_dispatch/middleware/server_timing.rb:58:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/static.rb:25:in `call'
+rack (3.0.8) lib/rack/sendfile.rb:114:in `call'
+actionpack (7.1.0) lib/action_dispatch/middleware/host_authorization.rb:141:in `call'
+railties (7.1.0) lib/rails/engine.rb:529:in `call'
+puma (6.4.0) lib/puma/configuration.rb:272:in `call'
+puma (6.4.0) lib/puma/request.rb:100:in `block in handle_request'
+puma (6.4.0) lib/puma/thread_pool.rb:378:in `with_force_shutdown'
+puma (6.4.0) lib/puma/request.rb:99:in `handle_request'
+puma (6.4.0) lib/puma/server.rb:443:in `process_client'
+puma (6.4.0) lib/puma/server.rb:241:in `block in run'
+puma (6.4.0) lib/puma/thread_pool.rb:155:in `block in spawn_thread'
+Started GET "/movies" for ::1 at 2023-10-11 13:03:35 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 843)
+  Rendered layout layouts/application.html.erb (Duration: 17.0ms | Allocations: 3060)
+Completed 200 OK in 22ms (Views: 17.9ms | ActiveRecord: 0.2ms | Allocations: 3336)
+
+
+Started GET "/" for 127.0.0.1 at 2023-10-11 13:30:49 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Redirected to http://127.0.0.1:3000/movies
+Completed 301 Moved Permanently in 9ms
+
+
+Started GET "/movies" for 127.0.0.1 at 2023-10-11 13:30:50 -0500
+Processing by MoviesController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  ↳ app/views/movies/index.html.erb:34
+  Rendered movies/index.html.erb within layouts/application (Duration: 67.4ms | Allocations: 12957)
+  Rendered layout layouts/application.html.erb (Duration: 285.6ms | Allocations: 49994)
+Completed 200 OK in 416ms (Views: 311.2ms | ActiveRecord: 0.7ms | Allocations: 60592)
+
+
