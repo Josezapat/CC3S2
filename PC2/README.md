@@ -163,3 +163,40 @@ end
 
 **Parte 2 Introducción a Rails**
 
+***
+
+**Parte 3 Rail**
+
+Tenemos todo correctamente instalado:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/33857f93-21ed-4d49-b85f-626ba1fe157a)
+
+Ejecutamos el comando:
+```bash
+rails new rottenpotatoes --skip-test-unit --skip-turbolinks --skip-spring
+```
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/b19bba0b-136d-4ddf-ae9b-e6952cae37bb)
+.Sigue ejecutando...
+.Sigue ejecutando...
+.Sigue ejecutando...
+.Sigue ejecutando...
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/21b84901-5a10-4333-8ae2-90a8a347f4c5)
+
+¿Qué pasa con ese mensaje run bundle install?
+
+Dentro del archivo creado rottenpotatoes obtenemos esta compilación:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/36353138-5ff8-4fa3-ab97-24e2c7a310d6)
+
+
+Gemfile que especifica la gema sqlite3 y cambia para que diga lo siguiente:
+
+gema 'sqlite3', '~> 1.3.0'
+
+Luego ejecuta la actualización del paquete y verifica que tu salida contenga " Fetching sqlite3 1.3.x” and “Installing sqlite3 1.3.x”, donde x es cualquier versión menor.
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/f8960bbe-7a8f-449e-b927-39543f95a422)
+
+
+
+
