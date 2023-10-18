@@ -1,4 +1,5 @@
 Clona el repositorio git clone https://github.com/saasbook/hw-rails-wordguesser.git
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/b72a0089-89cf-4718-9054-23fa882dad6c)
 
 Inicia el servidor.
 
