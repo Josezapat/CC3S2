@@ -54,5 +54,5 @@ los errores que a veces son dificiles de depurar, la complejidad del código y l
 ***
 **¿Siempre es malo utilizar abstracciones en el código de prueba?**
 
-No siempre es malo utilizar abstracciones en el código de prueba, ya que el uso de abstracciones en las pruebas puede tener muchos beneficios la Reutilización de código o tambien nos facilita la actualización de pruebas, sin embargo Las abstracciones en las pruebas deben utilizarse con moderación y ser relevantes para los casos de uso específicos. Si se usa mucha abstracción en las pruebas puede hacer que sean difíciles de entender y mantener. Por lo tanto, el equilibrio entre abstracción y simplicidad en las pruebas depende de las necesidades de cada proyecto.
+No siempre es malo utilizar abstracciones en el código de prueba, ya que el uso de abstracciones en las pruebas puede tener muchos beneficios tales como la reutilización de código o tambien nos facilita la actualización de pruebas, sin embargo Las abstracciones en las pruebas deben utilizarse con moderación y ser relevantes para los casos de uso específicos. Si se usa mucha abstracción en las pruebas puede hacer que sean difíciles de entender y mantener. Por lo tanto, el equilibrio entre abstracción y simplicidad en las pruebas depende de las necesidades de cada proyecto.
 ***
