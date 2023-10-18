@@ -24,19 +24,20 @@ exact_match = false
 ```
   
 
-# Procesamos los indicadores 
+Aqui procesamos los indicadores 
 
+```ruby
 while ARGV[0].start_with?('-') 
 
   case ARGV.shift 
 
   when '-n' 
 
-    show_line_number = true 
+    show_linea_nombre = true 
 
   when '-l' 
 
-    show_file_names = true 
+    show_archivo_nombre = true 
 
   when '-i' 
 
@@ -59,16 +60,19 @@ while ARGV[0].start_with?('-')
   end 
 
 end 
-
+```
   
 
-# Obtenemos la cadena de búsqueda 
+Obtenemos la cadena de búsqueda 
 
+```ruby
 search_string = ARGV.shift 
-
+```
   
 
-# Iteramos sobre los archivos especificados 
+Hacemos una iteración sobre los archivos especificados
+
+```ruby
 
 ARGV.each do |file_name| 
 
@@ -83,11 +87,11 @@ ARGV.each do |file_name|
         line_number += 1 
 
         line.chomp!  # Eliminamos el salto de línea 
-
+```
   
 
-        # Realizamos la búsqueda 
-
+Finalmente realizamos la búsqueda 
+```ruby
         if exact_match 
 
           match = line == search_string 
@@ -111,6 +115,11 @@ ARGV.each do |file_name|
       end 
 
     end 
+```
+
+Un mensaje de error si un archivo no fue encontrado
+
+```ruby
 
   rescue Errno::ENOENT 
 
@@ -119,3 +128,4 @@ ARGV.each do |file_name|
   end 
 
 end 
+```
