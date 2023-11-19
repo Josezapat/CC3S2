@@ -62,19 +62,19 @@ Ruby: No menciona específicamente las pruebas unitarias.
 
 JavaScript: Destaca la importancia de las pruebas unitarias para atrapar errores antes de la producción. 
 
-Linters y Formateadores: 
+- Linters y Formateadores: 
 
 Ruby: No menciona específicamente el uso de linters o formateadores. 
 
 JavaScript: Sugiere el uso de ESLint y Prettier para mantener un estilo de código consistente. 
 
-Manejo de Errores Asíncronos: 
+- Manejo de Errores Asíncronos: 
 
 Ruby: No aborda específicamente el manejo de errores asincrónicos. 
 
 JavaScript: Explica cómo manejar errores asincrónicos con bloques try-catch y el método .catch(). 
 
-Manejo de Errores en Event Listeners o Callbacks: 
+- Manejo de Errores en Event Listeners o Callbacks: 
 
 Ruby: No aborda explícitamente el manejo de errores en eventos o devoluciones de llamada. 
 
