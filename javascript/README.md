@@ -32,6 +32,7 @@ JavaScript es un lenguaje de programación versátil que puede realizar una ampl
 ***
 **Clausuras**
 Un paradigma popular en Javascript es el uso de clausuras. Al igual que las funciones de orden superior en Python, las clausuras son combinaciones de una función agrupada con referencias a su estado circundante. Las clausuras le dan acceso al alcance de una función externa desde una función interna. Determina la salida del siguiente código.
+
 Después de Instalar Node.js y Npm copiamos el código en Visual Studio Code y lo ejecutamos desde Git bash:
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/34dc7fc0-4b67-4ef7-9070-69870e629c22)
