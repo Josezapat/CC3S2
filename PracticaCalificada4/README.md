@@ -1,4 +1,4 @@
-**Practica Calificada 4**
+**Práctica Calificada 4**
 
 José Daniel Zapata Ancco / 20202230A
 
@@ -307,20 +307,27 @@ Modificamos nuestro archivo Index.html.erb extraido desde mi repositorio de la P
   .show-button {
     text-align: center;
   }
+
+  /* Estilo para el cambio temporal de color de fondo al pasar el ratón sobre una fila */
+  tr:hover {
+    background-color: yellow; /* Cambia a amarillo al pasar el ratón sobre una fila */
+  }
 </style>
 
 <h1>List of Movies</h1>
 
 <table>
   <tr>
+    <th>#</th>
     <th>Title</th>
     <th>Rating</th>
     <th>Description</th>
     <th>Release Date</th>
     <th>Show</th>
   </tr>
-  <% @movies.each do |movie| %>
+  <% @movies.each.with_index(1) do |movie, index| %>
     <tr>
+      <td><%= index %></td>
       <td><%= movie.title %></td>
       <td><%= movie.rating %></td>
       <td><%= movie.description %></td>
@@ -331,14 +338,43 @@ Modificamos nuestro archivo Index.html.erb extraido desde mi repositorio de la P
 </table>
 
 <%= link_to "New Movie", new_movie_path %>
+
 ```
 
 b.	Modifica la vista Index para que cuando se sitúe el ratón sobre una fila de la tabla, dicha fila cambie temporalmente su color de fondo a amarillo u otro color.
 
+```ruby
+```
 c.	Modifica la acción Index del controlador para que devuelva las películas ordenadas alfabéticamente por título, en vez de por fecha de lanzamiento. No intentes ordenar el resultado de la llamada que hace el controlador a la base de datos. Los gestores de bases de datos ofrecen formas para especificar el orden en que se quiere una lista de resultados y, gracias al fuerte acoplamiento entre ActiveRecord y el sistema gestor de bases de datos (RDBMS) que hay debajo, los métodos find y all de la biblioteca de ActiveRecord en Rails ofrece una manera de pedirle al RDBMS que haga esto.
 
+Se utiliza el método order de ActiveRecord para ordenar las películas por el título al recuperarlas de la base de datos.
+```ruby
+# app/controllers/movies_controller.rb
+
+class MoviesController < ApplicationController
+  def index
+    @movies = Movie.order(:title)
+  end
+
+  # Resto del código...
+end
+
+```
 d.	Simula que no dispones de ese fuerte acoplamiento de ActiveRecord, y que no puedes asumir que el sistema de almacenamiento que hay por debajo pueda devolver la colección de ítems en un orden determinado. Modifique la acción Index del controlador para que devuelva las películas ordenadas alfabéticamente por título. Utiliza el método sort del módulo Enumerable de Ruby.
 
+Se modifica la acción index del controlador para ordenar las películas alfabéticamente por título utilizando el método sort del módulo Enumerable de Ruby:
+```ruby
+# app/controllers/movies_controller.rb
+
+class MoviesController < ApplicationController
+  def index
+    @movies = Movie.all.sort_by(&:title)
+  end
+
+  # Resto del código...
+end
+
+```
 ***
 
 Para que esta página puntué por lo menos debes hacer 3 ítems.
