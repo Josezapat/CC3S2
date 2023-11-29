@@ -4,15 +4,24 @@ José Daniel Zapata Ancco / 20202230A
 
 ***
 El comando grep toma tres argumentos: 
+
 •	 La cadena a buscar. 
+
 •	Cero o más indicadores para personalizar el comportamiento del comando. 
+
 •	Uno o más archivos para buscar. 
+
 Luego lee el contenido de los archivos especificados (en el orden especificado), busca las líneas 	que contienen la cadena de búsqueda y finalmente devuelve esas líneas en el orden en que 	fueron encontradas. Al buscar en varios archivos, cada línea coincidente va precedida por el 	nombre del archivo y dos puntos (':'). 
 El comando grep admite los siguientes indicadores: 
+
 •	- n  Antepone el número de línea y dos puntos (':') a cada línea en la salida, colocando el número después del nombre del archivo (si está presente). 
+
 •	-l Muestra solo los nombres de los archivos que contienen al menos una línea coincidente. 
+
 •	-i Coincidencia utilizando una comparación que no distingue entre mayúsculas y minúsculas.
+
 •	-v Invierte el programa: recopila todas las líneas que no coinciden. 
+
 •	-x Busca solo líneas donde la cadena de búsqueda coincida con la línea completa.
 
 Procedemos a crear el archivo grep.js paso a paso:
