@@ -192,15 +192,19 @@ Un ejemplo para la compilación
   }
   ```
 Primero rellenamos `this.tipo = ""` y `this.movimiento = ""`
+
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/4f7ca4f1-6c00-470f-99d0-975de519da36)
   
 Ahora lo ejecutamos y obtenemos:
+
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/3b4240d9-54cc-42ff-b992-a1588ae38a54)
 
 Ahora lo dejamos vacío `this.tipo = ""` y `this.movimiento = ""`
+
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/6abbf249-d293-4406-81cd-e198c83ecf65)
 
 Ahora lo ejecutamos y obtenemos:
+
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/7111d2de-0004-4acc-93cb-fd532c9b915b)
 
 
