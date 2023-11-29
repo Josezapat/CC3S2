@@ -3,7 +3,7 @@
 José Daniel Zapata Ancco / 20202230A
 
 ***
-El comando grep toma tres argumentos: 
+1. El comando grep toma tres argumentos: 
 
 •	 La cadena a buscar. 
 
@@ -115,3 +115,14 @@ Y por último procesamos cada archivo proporcionado
 ```java
 args.forEach(grep);
 ```
+
+Ahora lo ejecutamos con el comando:
+```bash
+node grep.js args
+```
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/6792cc7e-4c1c-4ba4-b795-e40a3301068e)
+
+***
+
+2.	Practiquemos la herencia y la programación orientada a objetos en Javascript. Diseña 2 clases, una llamada "Pokemon" y otra llamada "Charizard". Las clases deben hacer lo siguiente:
+
