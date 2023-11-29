@@ -229,6 +229,11 @@ def initialize
 
 ¿Cuál es el problema con este enfoque dado, cuando quieres probar el metodo workday?. 	
 
+El problema con el enfoque actual es que la clase CurrentDay tiene una dependencia directa de la clase MonthlySchedule, Este principio establece que los módulos de alto nivel no deben depender directamente de los módulos de bajo nivel, sino que ambos deben depender de abstracciones. Además, las abstracciones no deben depender de implementaciones concretas.
+
+Una solución sería la aplicación de la inversión de dependencia.
+Refactorizamos la clase CurrentDay para recibir la instancia de MonthlySchedule como una dependencia en el constructor. 
+
 Utiliza la inyección de dependencia aplicado al siguiente código.
 
 ```ruby
@@ -246,8 +251,28 @@ before do
 end
 ```
 
+Este sería el código con la implementación de DIP:
+
+```ruby
+class CurrentDay
+  def initialize(schedule)
+    @date = Date.today
+    @schedule = schedule
+  end
+
+  def work_hours
+    @schedule.work_hours_for(@date)
+  end
+
+  def workday?
+    !@schedule.holidays.include?(@date)
+  end
+end
+```
+
  ¿Qué sucede en JavaScript con el DIP en este ejemplo? (1 punto).
 
+Al aplicar el DIP implica estructurar el código de manera que los módulos de alto nivel no dependan directamente de los de bajo nivel, y ambas dependan de abstracciones. 
 ***
 
 Los ejercicios a partir de aquí se recomiendan hacerlos en orden.
@@ -258,7 +283,7 @@ Pregunta: (Para responder esta pregunta utiliza el repositorio y las actividades
    
 a.	Modifica la vista Index para incluir el número de fila de cada fila en la tabla de películas.
 
-Modificamos nuestro archivo Index.html.erb extraido desde el repositorio de la Práctica Calificada 2: 
+Modificamos nuestro archivo Index.html.erb extraido desde el repositorio de la Práctica Calificada 2: https://github.com/Josezapat/CC3S2/tree/main/PC2
 
 ```ruby
 <!-- app/views/movies/index.html.erb -->
