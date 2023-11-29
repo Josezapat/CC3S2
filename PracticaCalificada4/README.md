@@ -283,7 +283,7 @@ Pregunta: (Para responder esta pregunta utiliza el repositorio y las actividades
    
 a.	Modifica la vista Index para incluir el número de fila de cada fila en la tabla de películas.
 
-Modificamos nuestro archivo Index.html.erb extraido desde el repositorio de la Práctica Calificada 2: https://github.com/Josezapat/CC3S2/tree/main/PC2
+Modificamos nuestro archivo Index.html.erb extraido desde mi repositorio de la Práctica Calificada N°2: https://github.com/Josezapat/CC3S2/tree/main/PC2
 
 ```ruby
 <!-- app/views/movies/index.html.erb -->
