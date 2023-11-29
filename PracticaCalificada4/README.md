@@ -126,3 +126,69 @@ node grep.js args
 
 2.	Practiquemos la herencia y la programación orientada a objetos en Javascript. Diseña 2 clases, una llamada "Pokemon" y otra llamada "Charizard". Las clases deben hacer lo siguiente:
 
+Creamos dos clases, "Pokemon" y "Charizard". La clase "Charizard" hereda de "Pokemon":
+
+Primero creamos la Clase Pokemon y podemos declarar si existe el tipo o movimiento completando las comillas en 'this.tipo = ""' y 'this.movimiento = ""'
+```java
+class Pokemon {
+    constructor(HP, ataque, defensa) {
+      this.HP = HP;
+      this.ataque = ataque;
+      this.defensa = defensa;
+      this.movimiento = "";
+      this.nivel = 1;
+      this.tipo = "";
+  
+      if (!this.movimiento) {
+        throw new Error("No se ha especificado ningún movimiento.");
+      }
+    }
+  
+    flight() {
+      if (!this.movimiento) {
+        throw new Error("No se ha especificado ningún movimiento.");
+      }
+      console.log("¡Usando el movimiento de vuelo!");
+    }
+  
+    canFly() {
+      if (!this.tipo) {
+        throw new Error("No se ha especificado ningún tipo.");
+      }
+      return this.tipo.includes("flying");
+    }
+  }
+  ```
+
+Creamos la clase Charizard que hereda de la clase Pokemon
+```java
+  class Charizard extends Pokemon {
+    constructor(HP, ataque, defensa, movimiento) {
+      super(HP, ataque, defensa);
+      this.movimiento = movimiento;
+      this.tipo = "flying";
+    }
+  
+    fight() {
+      if (this.movimiento) {
+        console.log(`¡Usando el movimiento ${this.movimiento}!`);
+        return this.ataque;
+      } else {
+        throw new Error("No se ha especificado ningún movimiento para la lucha.");
+      }
+    }
+  }
+```
+  
+Un ejemplo para la compilación
+```java
+  try {
+    const charizard = new Charizard(100, 50, 30, "lanzar llamas");
+    charizard.flight();
+    console.log(`¿Puede volar? ${charizard.canFly()}`);
+    console.log(`Poder de ataque: ${charizard.fight()}`);
+  } catch (error) {
+    console.error(error.message);
+  }
+  ```
+  
