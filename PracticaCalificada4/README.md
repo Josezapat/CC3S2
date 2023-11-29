@@ -207,4 +207,139 @@ Ahora lo ejecutamos y obtenemos:
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/7111d2de-0004-4acc-93cb-fd532c9b915b)
 
+***
+
+3.	El principio de inversión de dependencia establece que los módulos de alto nivel no deberían depender de los módulos de bajo nivel, y tanto los módulos de alto nivel como los de bajo nivel deberían depender de abstracciones. También establece que las abstracciones no deberían depender de implementaciones concretas, sino que las implementaciones concretas deberían depender de abstracciones.
+
+```ruby
+class CurrentDay
+def initialize
+    @date = Date.today
+    @schedule = MonthlySchedule.new(@date.year,
+@date.month)
+  end
+                def work_hours
+      @schedule.work_hours_for(@date)
+                 end
+                def workday?
+       !@schedule.holidays.include?(@date)
+                  end
+               end
+```
+
+¿Cuál es el problema con este enfoque dado, cuando quieres probar el metodo workday?. 	
+
+Utiliza la inyección de dependencia aplicado al siguiente código.
+
+```ruby
+before do
+    Date.singleton_class.class_eval do
+                       alias_method :_today, :today
+                      define_method(:today){Date.new(2020, 12, 16)}
+                   end
+              end
+             after do
+               Date.singleton_class.class_eval do
+                     alias_method :today, :_today
+                      remove_method :_today
+  end	
+end
+```
+
+ ¿Qué sucede en JavaScript con el DIP en este ejemplo? (1 punto).
+
+***
+
+Los ejercicios a partir de aquí se recomiendan hacerlos en orden.
+
+Pregunta: (Para responder esta pregunta utiliza el repositorio y las actividades que has desarrollado de Introducción a Rails)
+
+1.	Modifique la lista de películas de la siguiente manera. Cada modificación va a necesitar que realice un cambio en una capa de abstracción diferente
+   
+a.	Modifica la vista Index para incluir el número de fila de cada fila en la tabla de películas.
+
+Modificamos nuestro archivo Index.html.erb extraido desde el repositorio de la Práctica Calificada 2: 
+
+```ruby
+<!-- app/views/movies/index.html.erb -->
+
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+
+  th {
+    background-color: #ffebcd; /* Fondo crema */
+  }
+
+  .show-button {
+    text-align: center;
+  }
+</style>
+
+<h1>List of Movies</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Rating</th>
+    <th>Description</th>
+    <th>Release Date</th>
+    <th>Show</th>
+  </tr>
+  <% @movies.each do |movie| %>
+    <tr>
+      <td><%= movie.title %></td>
+      <td><%= movie.rating %></td>
+      <td><%= movie.description %></td>
+      <td><%= movie.release_date %></td>
+      <td class="show-button"><%= link_to "Show This Movie", movie %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to "New Movie", new_movie_path %>
+```
+
+b.	Modifica la vista Index para que cuando se sitúe el ratón sobre una fila de la tabla, dicha fila cambie temporalmente su color de fondo a amarillo u otro color.
+
+c.	Modifica la acción Index del controlador para que devuelva las películas ordenadas alfabéticamente por título, en vez de por fecha de lanzamiento. No intentes ordenar el resultado de la llamada que hace el controlador a la base de datos. Los gestores de bases de datos ofrecen formas para especificar el orden en que se quiere una lista de resultados y, gracias al fuerte acoplamiento entre ActiveRecord y el sistema gestor de bases de datos (RDBMS) que hay debajo, los métodos find y all de la biblioteca de ActiveRecord en Rails ofrece una manera de pedirle al RDBMS que haga esto.
+
+d.	Simula que no dispones de ese fuerte acoplamiento de ActiveRecord, y que no puedes asumir que el sistema de almacenamiento que hay por debajo pueda devolver la colección de ítems en un orden determinado. Modifique la acción Index del controlador para que devuelva las películas ordenadas alfabéticamente por título. Utiliza el método sort del módulo Enumerable de Ruby.
+
+***
+
+Para que esta página puntué por lo menos debes hacer 3 ítems.
+
+Pregunta: (para responder esta pregunta utiliza el repositorio y las actividades que has realizado de Rails avanzado, en particular asociaciones) - 2 puntos
+
+1.	Extienda el código del controlador del código siguiente dado con los métodos edit y update para las críticas. Usa un filtro de controlador para asegurarte de que un usuario sólo puede editar o actualizar sus propias críticas. Revisa el código dado en la evaluación y actualiza tus repositorios de actividades (no se admite nada nuevo aquí). Debes mostrar los resultados. 
+
+Preguntas: (estas preguntas son utilizando el repositorio de todas tus actividades relacionada a JavaScript, por lo tanto, no hay respuestas únicas) - 6 puntos
+
+1.	Un inconveniente de la herencia de prototipos es que todos los atributos (propiedades) de los objetos son públicos. Sin embargo, podemos aprovechar las clausuras para obtener atributos privados. Crea un sencillo constructor para los objetos User que acepte un nombre de usuario y una contraseña, y proporcione un método checkPassword que indique si la contraseña proporcionada es correcta, pero que deniegue la inspección de la contraseña en sí. Esta expresión de “sólo métodos de acceso” se usa ampliamente en jQuery. Sugerencia:  El constructor debe devolver un objeto en el que una de sus propiedades es una función que aprovecha las clausuras de JavaScript para ‘recordar’ la contraseña proporcionada inicialmente al constructor. El objeto devuelto no debería tener ninguna propiedad que contenga la contraseña).
+  
+2.	Extienda la función de validación en ActiveModel  para generar automáticamente código JavaScript que valide las entradas del formulario antes de que sea enviado. Por ejemplo, puesto que el modelo Movie de RottenPotatoes requiere que el título de cada película sea distinto de la cadena vacía, el código JavaScript deberías evitar que el formulario “Add New Movie” se enviara si no se cumplen los criterios de validación, mostrar un mensaje de ayuda al usuario, y resaltar el(los) campo(s) del formulario que ocasionaron los problemas de validación. Gestiona, al menos, las validaciones integradas, como que los títulos sean distintos de cadena vacía, que las longitudes máximas y mínima de la cadena de caracteres sean correctas, que los valores numéricos estén dentro de los límites de los rangos, y para puntos adicionales, realiza las validaciones basándose en expresiones regulares.
+   
+3.	En el código utilizado en la sección de eventos y funciones callback, supongamos que no puedes modificar el código del servidor para añadir la clase CSS adult a las filas de la tabla movies. ¿Cómo identificaría las filas que están ocultas utilizando sólo código JavaScript del lado cliente?
+   
+4.	Siguiendo la estrategia del ejemplo de jQuery de la misma sección anterior de eventos y funciones callback, utiliza JavaScript para implementar un conjunto de casillas de verificación (checkboxes) para la página que muestra la lista de películas, una por cada calificación (G, PG, etcétera), que permitan que las películas correspondientes permanezcan en la lista cuando están marcadas. Cuando se carga la página por primera vez, deben estar marcadas todas; desmarcar alguna de ellas debe esconder las películas con la clasificación a la que haga referencia la casilla desactivada.
+   
+5.	Escribe el código AJAX necesario para crear menús en cascada basados en una asociación has_many. Esto es, dados los modelos de Rails A y B, donde A has_many (tiene muchos) B, el primer menú de la pareja tiene que listar las opciones de A, y cuando se selecciona una, devolver las opciones de B correspondientes y rellenar el menú B.
+    
+6.	Extienda la funcionalidad del ejemplo dado en la actividad de AJAX: JavaScript asíncrono y XML de forma que, si el usuario expande u oculta repetidamente la misma fila de la tabla de películas, sólo se haga una única petición al servidor para la película en cuestión la primera vez. En otras palabras, implementa una memoria caché con JavaScript en el lado cliente para la información de la película devuelta en cada llamada AJAX.
+
+
+
+
+
+
+
 
