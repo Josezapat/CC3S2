@@ -1,4 +1,9 @@
 **Práctica Calificada 4**
+*Profesor Lara quería informarle de que se me borró el Readme.md de este repositorio, además se me borraron otros archivos también lo que pasa es que configuré 
+mal un comando desde el terminal al subir la tarea de Pruebas-JS-Ajax y se sobreescribieron todos y estaba tratando de resetear el commit con git reset hard pero no me funcionaba
+es por eso que tuve que subir de nuevo localmente mis archivos es por eso que puede ver los commits de hoy y también el readme el commit que recien lo estoy subiendo pero
+el examen yo lo acabé en su momento e hice todo lo que pude, sólo le estoy contando la verdad de lo que me pasó espero pueda comprenderme incluso no esta al 100% el examen ya que me
+faltó tiempo, sólo estoy volviendo a subir los archivos y a crear este nuevo Readme que lo encontré en mi codespaces. Desde ya le pido disculpas por lo ocurrido**
 
 José Daniel Zapata Ancco / 20202230A
 
