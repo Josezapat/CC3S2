@@ -6,8 +6,12 @@ Estas preguntas corresponden a las actividades desarrolladas en clase.
 1.	Produce un conflicto de fusión (merge) en algún repositorio de tus actividades realizadas. Establece los pasos y comandos que usas para resolver un conflicto de fusión en Git. Si intentas git push y falla con un mensaje como : Non-fast-forward (error): failed to push some refs esto significa que algún archivo contiene un conflicto de fusión entre la versión de tu repositorio y la versión del repositorio origen. Para este ejercicio debes presentar el conflicto dado, los pasos y comandos para resolver el problema y las solución.
 
 - Si es verdad, algunas veces cuando estoy subiendo un git push origin main desde mi computadora local hacia mi repositorio de github se me ha abierto automáticamente un Archivo llamado MERGE en Visual Studio Code, el cual sirve para escribir en texto los cambios que se van hacer al subir el repositorio actualizaco, yo lo que hago es simplemente cerrar ese archivo MERGE y el git bash seguirá funcionando normalmente.
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/944a741d-9c76-4963-b755-bf94dfd54121)
 
-Los Archivos los estoy utilizando desde la carpeta Ajax de mi rapositorio: https://github.com/Josezapat/CC3S2/tree/main/Ajax
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/c80674a9-44f9-4eaf-bea1-b682ee9d9f2e)
+
+
+Los Archivos a continuacion los estoy utilizando desde la carpeta Ajax de mi rapositorio: https://github.com/Josezapat/CC3S2/tree/main/Ajax
 
 2.1. ¿Qué pasa si tenemos @user sin nombre de usuario y llamamos a @user.valid? ¿Qué guardará @user.save?
 Si tenemos un objeto @user sin un nombre de usuario y llamo a @user.valid?, se ejecutarán las validaciones definidas en el modelo User. En este caso, la validación validates :username, :presence => true garantiza que el campo username no esté en blanco. Por lo tanto, @user.valid? devolverá false porque la validación de presencia no se cumple.
