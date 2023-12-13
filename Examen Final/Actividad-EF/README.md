@@ -260,3 +260,79 @@ Rottenpotatoes::Application.routes.draw do
   root to: redirect('/movies')
 end
 ```
+Modificamos el archivo 'search_tmdb.html.erb' :
+
+```html
+<!-- app/views/movies/search_tmdb.html.erb -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+<h2>Search in TMDb</h2>
+
+<div class="search-container">
+  <%= form_tag search_tmdb_path, method: :get do %>
+    <label for="searchMovieName">Movie Name</label>
+    <%= text_field_tag 'title', nil, class: "form-control", id: "movie_title_field", placeholder: "Manhunter" %>
+
+    <label for="searchReleaseDateField">Release Year</label>
+    <%= text_field_tag 'release_year', nil, class: "form-control", id: "movie_year_field", placeholder: "1986" %>
+
+    <div class="form-check">
+      <%= radio_button_tag 'language', 'en', false, class: "form-check-input" %>
+      <label class="form-check-label" for="language_en">English Only</label>
+    </div>
+
+    <div class="form-check">
+      <%= radio_button_tag 'language', 'all', true, class: "form-check-input" %>
+      <label class="form-check-label" for="language_all">All Languages</label>
+    </div>
+
+    <%= submit_tag 'Search', id: 'tmdb_submit', class: 'btn btn-warning col-2' %>
+  <% end %>
+</div>
+```
+
+Cambiamos nuestro archivo movie.rb:
+
+```ruby
+class Movie < ActiveRecord::Base
+  def self.all_ratings
+    ['G', 'PG', 'PG-13', 'R']
+  end
+  
+  def self.with_ratings(ratings, sort_by)
+    if ratings.nil?
+      all.order(sort_by)
+    else
+      where(rating: ratings.map(&:upcase)).order(sort_by)
+    end
+  end
+
+  def self.search_tmdb(title, release_year, language)
+
+    results = Tmdb::Movie.find(title)
+    results.map do |result|
+      {
+        title: result.title,
+        release_date: result.release_date,
+        rating: 'PG' # Asume un valor predeterminado, debes ajustar según los datos reales de TMDb
+      }
+    end
+  end
+end
+```
+
+Actualizamos nuestro Gemfile y ejecutamos bundle install:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/dff1c91f-2350-4741-9362-557a30339a03)
+
+Luego creamos el archivo 'movies_controller_spec.rb'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/afe96da5-636b-4518-a2d5-461ece16231c)
+
+Ejecutamos 'bundle exec guard'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/ec4eed18-ceab-4f3e-bc50-baebe2a1c7ee)
+
+
