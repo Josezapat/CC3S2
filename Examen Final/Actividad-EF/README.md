@@ -177,3 +177,86 @@ Donde agregamos en la interfaz para poner el username y pasword:
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/2dbf58c3-1c96-4ace-b514-2b28635f9df8)
 
+5.	¿Cuándo deberías utilizar la metaprogramación basada en eval en lugar de la metaprogramación basada en bloques?.
+
+En la mayoría de los casos, es preferible utilizar la metaprogramación basada en bloques en lugar de la metaprogramación basada en eval. La metaprogramación basada en bloques tiende a ser más segura, legible y mantenible. La opción de usar eval debería usarse para situaciones específicas en las que la flexibilidad dinámica es absolutamente necesaria y se pueden gestionar cuidadosamente los riesgos asociados al codigo.
+
+***
+
+Parte 2 Pruebas
+
+Primero editamos el archivo Gemfile agregando:
+
+```ruby
+gem 'faraday'
+group :test do
+  gem 'rails-controller-testing'
+  gem 'guard-rspec'                 
+end
+```
+
+•	Vuelva a ejecutar bundle install para obtener las gemas. Luego ejecuta Rails generate rspec:install para asegurarte de que los archivos que RSpec que necesitas estén en su lugar. 
+
+Ejecutamos 'bundle install --without production'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/a8807a25-a6c2-45ec-95a6-6831784c124a)
+
+Ejecutamos 'rails generate rspec:install'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/9dc1b677-f99c-4ba9-9915-bcb1063cb1a8)
+
+•	Edita el archivo spec/rails_helper.rb para incluir require 'byebug' en la parte superior, de modo que puedas acceder al depurador según sea necesario para que las pruebas funcionen. 
+
+Agregamos al archivo rails_helper.rb 'require 'byebug'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/d39dd956-a15d-487a-8e08-8b2060712059)
+
+•	Ejecuta el paquete exec guard init rspec para configurar los archivos necesarios para Guard, lo que dará como resultado la creación de un nuevo Guardfile. Agrega ese archivo a tu repositorio.
+
+Ejecutamos 'bundle exec guard init rspec' y lo guardamos:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/f79d588f-4244-43ac-a4a2-0093357a0e6e)
+
+•	Configura la base de datos con el comando habitual
+
+Ejecutamos 'rake db:create' y 'rake db:migrate'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/650e4e8a-1e00-4960-8cb5-83880f625185)
+
+•	Ejecuta el servidor para mostrar que todo este bien.
+
+Y por último ejecutamos el servidor con 'rails server'
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/9d0cf094-4a4a-42c2-8d41-1e7b233feea1)
+
+Abrimos http://localhost:3000 y obtenemos:
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/d7f0f396-0c17-4cff-8c34-0564e4b31837)
+
+***
+Paso 1: Escribiendo una nueva vista  
+
+Agregamos la acción:
+
+```ruby
+def search_tmdb
+      # Lógica de la acción
+    end
+  end
+```
+y configuramos nuestra ruta:
+
+```ruby
+# config/routes.rb
+
+Rottenpotatoes::Application.routes.draw do
+  resources :movies do
+    collection do
+      get 'search_tmdb'
+    end
+  end
+
+  # map '/' to be a redirect to '/movies'
+  root to: redirect('/movies')
+end
+```
