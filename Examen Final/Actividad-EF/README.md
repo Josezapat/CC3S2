@@ -1,5 +1,8 @@
-Examen Final
-José Daniel Zapata Ancco / 20202230A
+**Examen Final**
+**José Daniel Zapata Ancco / 20202230A**
+
+***
+
 Parte 1
 Estas preguntas corresponden a las actividades desarrolladas en clase.
 
@@ -393,3 +396,15 @@ En el archivo movie.rb agregamos el método:
     []
   end
 ```
+
+Este sería un ejemplo de lo que podría suceder si la expectativa no precede a la acción get:
+
+```ruby
+it 'calls the model method that performs TMDb search' do
+  get :search_tmdb, { search_terms: 'hardware' }
+  # No hay expectativa configurada antes de la acción,
+  # RSpec no está al tanto de la llamada esperada
+end
+```
+
+La configuración previa garantiza que RSpec esté informado de las expectativas antes de que se realice la acción.
