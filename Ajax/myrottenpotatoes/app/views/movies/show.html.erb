@@ -1,3 +1,5 @@
+<!-- app/views/movies/show.html.erb -->
+
 <h1>Details about <%= @movie.title %></h1>
 
 <div id="metadata">
@@ -14,3 +16,14 @@
 
 <%= link_to 'Edit this movie', edit_movie_path(@movie), :class => 'btn' %>
 <%= link_to 'Back to movie list', movies_path, :class => 'btn btn-primary' %>
+
+<%= link_to 'Load Details with AJAX', show_ajax_movie_path(@movie), remote: true, id: 'ajax-link' %>
+<div id="movie-details"></div>
+
+<%= javascript_tag do %>
+  $(document).on('turbolinks:load', function() {
+    $('#ajax-link').on('ajax:beforeSend', function() {
+      $('#movie-details').html('Loading...');
+    });
+  });
+<% end %>
