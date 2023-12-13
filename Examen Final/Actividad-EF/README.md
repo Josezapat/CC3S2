@@ -335,4 +335,54 @@ Ejecutamos 'bundle exec guard'
 
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/ec4eed18-ceab-4f3e-bc50-baebe2a1c7ee)
 
+***
 
+Paso 2: Lograr que se apruebe la primera especificación  
+
+- Modificamos el archivo 'movies_controller_spec.rb'
+
+```ruby
+# movies_controller_spec.rb
+require 'rails_helper'
+
+unless defined?(SomeConstantDefinedInSpec)
+  SomeConstantDefinedInSpec = true
+
+  describe MoviesController do
+    describe 'searching TMDb' do
+      it 'calls the model method that performs TMDb search' do
+        fake_results = [double('movie1'), double('movie2')]
+        expect(Movie).to receive(:find_in_tmdb).with('hardware').
+          and_return(fake_results)
+        get :search_tmdb, search_terms: 'hardware'
+      end
+
+      it 'selects the Search Results template for rendering' do
+        post :search_tmdb
+        expect(response).to render_template('search_tmdb')
+      end
+
+      it 'makes the TMDb search results available to that template' do
+        results = [{ title: 'Inception', release_date: '2010-07-16', rating: 'PG-13' }]
+        allow(Movie).to receive(:search_tmdb).and_return(results)
+        post :search_tmdb
+        expect(assigns(:tmdb_results)).to eq(results)
+      end
+    end
+  end
+end
+```
+El objeto doble (double) es para representar las películas devueltas por el método find_in_tmdb. La expectativa (expect) establece que el método del modelo (Movie.find_in_tmdb) y será llamado con los argumentos correctos para luego devolver el objeto doble fake_results
+
+
+La razón por la que la expectativa receive debe preceder a la acción get en la prueba es porque estamos configurando un "doble" o "mock" del método find_in_tmdb antes de que realmente exista.
+
+En el archivo movie.rb agregamos el método:
+
+```ruby
+ def self.find_in_tmdb(search_terms)
+   
+    # Por ahora, simplemente devolvemos un array vacío
+    []
+  end
+```
