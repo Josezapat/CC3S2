@@ -1,4 +1,4 @@
-<!--  This file is app/views/movies/index.html.erb -->
+<!-- This file is app/views/movies/index.html.erb -->
 <h2>All Movies</h2>
 
 <div class="row navigation">
@@ -17,9 +17,43 @@
     <% end %>
   </div>
   <div class="col-md-2">
-    <%# Part 1 here %>
-  </div>
+    <!-- Agrega el formulario de inicio de sesión -->
+    <form method="POST" id="loginForm">
+      <input type="text" class="user" placeholder="Username" />
+      <input type="password" class="pass" placeholder="Password" />
+      <input type="button" value="Log in" id="onSubmit" />
+    </form>
 
+    <!-- Incluye jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <!-- Tu código jQuery -->
+    <script>
+      $("#onSubmit").click(function() {
+        // Obtener los valores del formulario
+        var username = $(".user").val();
+        var password = $(".pass").val();
+
+        // Realizar la solicitud HTTP POST
+        $.ajax({
+          url: '/ruta/del/servicio', // Reemplaza con la URL real de tu servicio
+          method: 'POST',
+          data: {
+            username: username,
+            password: password
+          },
+          success: function(response) {
+            // Función de devolución de llamada (callback) para manejar la respuesta exitosa
+            console.log('Éxito:', response);
+          },
+          error: function(error) {
+            // Función de devolución de llamada (callback) para manejar errores
+            console.error('Error:', error);
+          }
+        });
+      });
+    </script>
+  </div>
 </div>
 
 <table class="table table-striped col-md-12" id="movies">
@@ -57,4 +91,5 @@
     <% end %>
   </tbody>
 </table>
+
 <%= link_to 'Add new movie', new_movie_path, class: 'btn btn-primary' %>
