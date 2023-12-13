@@ -9,7 +9,7 @@ Estas preguntas corresponden a las actividades desarrolladas en clase.
 
 Los Archivos los estoy utilizando desde la carpeta Ajax de mi rapositorio: https://github.com/Josezapat/CC3S2/tree/main/Ajax
 
-2. ¿Qué pasa si tenemos @user sin nombre de usuario y llamamos a @user.valid? ¿Qué guardará @user.save?
+2.1. ¿Qué pasa si tenemos @user sin nombre de usuario y llamamos a @user.valid? ¿Qué guardará @user.save?
 Si tenemos un objeto @user sin un nombre de usuario y llamo a @user.valid?, se ejecutarán las validaciones definidas en el modelo User. En este caso, la validación validates :username, :presence => true garantiza que el campo username no esté en blanco. Por lo tanto, @user.valid? devolverá false porque la validación de presencia no se cumple.
 
 Si intentamos guardar el objeto @user con @user.save, el método save devolverá false porque la validación falló. Además, los errores de validación estarán disponibles en @user.errors.
@@ -38,12 +38,9 @@ Verifico los errores
 puts @user.errors.full_messages
 ```
 
-![image](https://github.com/Josezapat/CC3S2/assets/90808325/a6b492b5-cf23-44b5-97cd-7fcca455f79e)
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/34cc6524-8151-4805-bd8e-006d50447efe)
 
-
-
-
-3.
+2.2.
 Creamos User .rb:
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/6479e883-f0e8-4bc0-b4f8-c354c9cc2ff9)
 
@@ -54,3 +51,12 @@ el método username_format realiza la validación personalizada utilizando una e
 ![image](https://github.com/Josezapat/CC3S2/assets/90808325/ea6b6da3-20c9-442e-bfd5-09cb977f7a13)
 
 Nos sale un error de un mensaje que indica que el nombre de usuario debe comenzar con una letra y tener como máximo 10 caracteres.
+
+
+Creamos el archivo admin_controller.rb
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/00316b56-d1ff-4a58-9ef8-c73ea8ede951)
+
+![image](https://github.com/Josezapat/CC3S2/assets/90808325/ce6def67-d381-41f3-a5ac-793bb13e2e81)
+
+En este código, el método check_admin se ejecutará antes de cada acción en AdminController. Se verifica si el campo admin del objeto @user es true. Si no lo es, se establece un mensaje de alerta en el flash y se redirige a la página admin_login. 
