@@ -1,14 +1,12 @@
 source 'https://rubygems.org'
 
 ruby '2.6.6'
-gem 'rails', '4.2.11'
 
+gem 'rails', '4.2.11'
 
 gem 'sass-rails', '~> 5.0.3'
 gem 'uglifier', '>= 2.7.1'
-
 gem 'jquery-rails'
-
 
 # for Heroku deployment - as described in Ap. A of ELLS book
 group :development, :test do
@@ -24,7 +22,17 @@ group :development, :test do
   gem 'web-console', group: :development
 end
 
+gem 'faraday'
+
+group :test do
+  gem 'guard-rspec'
+end
+
 group :production do
-  gem 'pg', '~> 0.2'
+  gem 'pg', '~> 0.21'
   gem 'rails_12factor'
 end
+
+# Agregamos la gema 'themoviedb-api' para interactuar con TMDb
+gem 'themoviedb-api'
+
